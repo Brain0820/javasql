@@ -1,0 +1,37 @@
+CREATE TABLE `namdb`.`customer` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `firstname` VARCHAR(45) NOT NULL,
+  `lastname` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`));
+
+CREATE TABLE `namdb`.`cart` (
+  `id` INT NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  `count` INT NOT NULL,
+  `total_money` INT NOT NULL,
+  PRIMARY KEY (`id`));
+
+CREATE TABLE `namdb`.`product` (
+  `id` INT NOT NULL,
+  `product` VARCHAR(45) NOT NULL,
+  `price` INT NOT NULL,
+  `fee` INT NOT NULL,
+  PRIMARY KEY (`id`));
+
+INSERT INTO `namdb`.`product` (`id`, `product`, `price`, `fee`) VALUES ('123', '玉山', '100', '5');
+INSERT INTO `namdb`.`product` (`id`, `product`, `price`, `fee`) VALUES ('456', '國泰', '80', '4');
+INSERT INTO `namdb`.`product` (`id`, `product`, `price`, `fee`) VALUES ('789', '華南', '60', '3');
+INSERT INTO `namdb`.`product` (`id`, `product`, `price`, `fee`) VALUES ('111', '台新', '40', '2');
+INSERT INTO `namdb`.`product` (`id`, `product`, `price`, `fee`) VALUES ('222', '花旗', '20', '1');
+
+
+
+
+package net.codejava;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
+
